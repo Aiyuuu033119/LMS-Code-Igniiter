@@ -63,7 +63,7 @@ class Returned extends CI_Controller {
     $days = $this->return->verify('setting_table',array('id' => '1', ));
 
     $status = '';
-    if(intval($diff->d) < intval($days->days_borrowed)){
+    if(intval($diff->d) < intval($days[0]->days_borrowed)){
       $status = 'On Time';
     }else{
       $status = 'Late';
@@ -116,16 +116,28 @@ class Returned extends CI_Controller {
 
   public  function detailsreturn()
   {
-    $data['title'] = 'Returned Details';
-    $data['info'] = $this->return->details('return_table', $this->uri->segment(3));
-    $this->load->view('application/returned_details',$data);
+    if(isset($_SESSION['name'])){
+      $data['title'] = 'Returned Details';
+      $data['info'] = $this->return->details('return_table', $this->uri->segment(3));
+      $this->load->view('application/returned_details',$data);
+    }
+    else{
+      redirect('auth/login');
+    }
+    
   }
 
   public  function editreturn()
   {
-    $data['title'] = 'Edit Return Details';
-    $data['info'] = $this->return->details('return_table', $this->uri->segment(3));
-    $this->load->view('application/returned_edit',$data);
+    if(isset($_SESSION['name'])){
+      $data['title'] = 'Edit Return Details';
+      $data['info'] = $this->return->details('return_table', $this->uri->segment(3));
+      $this->load->view('application/returned_edit',$data);
+    }
+    else{
+      redirect('auth/login');
+    }
+    
   }
 
   public  function updatereturn()

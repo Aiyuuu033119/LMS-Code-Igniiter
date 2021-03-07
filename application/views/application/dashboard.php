@@ -123,7 +123,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <h3 class="mb-0">New Books</h3>
                 </div>
                 <div class="col text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                  <a href="<?php echo base_url()?>app/booklist" class="btn btn-sm btn-primary">See all</a>
                 </div>
               </div>
             </div>
@@ -153,7 +153,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   <h3 class="mb-0">New Students</h3>
                 </div>
                 <div class="col text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                  <a href="<?php echo base_url()?>app/students" class="btn btn-sm btn-primary">See all</a>
                 </div>
               </div>
             </div>

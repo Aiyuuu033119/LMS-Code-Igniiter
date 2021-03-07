@@ -18,7 +18,10 @@ class Auth extends CI_Controller {
 
     public  function login()
 	{
-		$this->load->view('login');
+		
+		if(!isset($_SESSION['name'])){
+			$this->load->view('login');
+		}
 	}
 	
 	public function loginProc() {

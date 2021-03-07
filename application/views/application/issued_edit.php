@@ -54,6 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $old = '';
               foreach ($info as $data) {
                 $old = $data->code;
+                $memberold = $data->member;
             ?>
             <div class="card-body">
               <form>
@@ -171,6 +172,7 @@ $('.save-btn').on('click', function(){
     data.append('member', member);
     data.append('code', code);
     data.append('old_code', '<?php echo $old ?>');
+    data.append('old_member', '<?php echo $memberold?>');
 
     $.ajax({
       url: "<?php echo base_url()?>issue/updateissue/<?php echo $this->uri->segment(3);?>",
@@ -182,7 +184,6 @@ $('.save-btn').on('click', function(){
 
         var json = JSON.parse(data);
         
-        console.log(json);
 
         if(json.msg=='success'){
           $('#modal-notification-success').modal('show')

@@ -66,6 +66,12 @@ class Students extends CI_Controller {
     $info = $this->return->verify('member_table', $data);
     
     if(empty($info)){
+      $data = array(
+      'name' => $name, 
+      'section' => $section, 
+      'contact' => $contact, 
+    );
+
       $info = $this->student->update('member_table', $data, array('id' => $id ));
     }
     else{

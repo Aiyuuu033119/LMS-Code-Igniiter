@@ -111,18 +111,30 @@ class Book extends CI_Controller {
 
   public  function detailsbook()
   {
-    $data['title'] = 'Book Details';
-    $data['info'] = $this->book->bookinfo('book_table',array('code' => $this->uri->segment(3)), true);
-    $data['status'] = $this->book->bookinfo('book_table',array('code' => $this->uri->segment(3)), false);
-    $this->load->view('application/booklist_details',$data);
+    if(isset($_SESSION['name'])){
+      $data['title'] = 'Book Details';
+      $data['info'] = $this->book->bookinfo('book_table',array('code' => $this->uri->segment(3)), true);
+      $data['status'] = $this->book->bookinfo('book_table',array('code' => $this->uri->segment(3)), false);
+      $this->load->view('application/booklist_details',$data);
+    }
+    else{
+      redirect('auth/login');
+    }
+    
   }
 
   public  function editbook()
   {
-    $data['title'] = 'Edit Books';
-    $data['info'] = $this->book->bookinfo('book_table',array('code' => $this->uri->segment(3)), true);
-    $data['status'] = $this->book->bookinfo('book_table',array('code' => $this->uri->segment(3)), false);
-    $this->load->view('application/booklist_edit',$data);
+    
+    if(isset($_SESSION['name'])){
+      $data['title'] = 'Edit Books';
+      $data['info'] = $this->book->bookinfo('book_table',array('code' => $this->uri->segment(3)), true);
+      $data['status'] = $this->book->bookinfo('book_table',array('code' => $this->uri->segment(3)), false);
+      $this->load->view('application/booklist_edit',$data);
+    }
+    else{
+      redirect('auth/login');
+    }
   }
 
   public  function updatebook()

@@ -58,6 +58,11 @@ class Categories extends CI_Controller {
     $info = $this->return->verify('class_table', $data);
     
     if(empty($info)){
+      $data = array(
+      'categories' => $class, 
+      'code' => $code, 
+    );
+
       $info = $this->class->update('class_table', $data, array('id' => $id ));
     }
     else{

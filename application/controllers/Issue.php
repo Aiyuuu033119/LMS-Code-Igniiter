@@ -95,25 +95,38 @@ class Issue extends CI_Controller {
 
   public  function detailsissue()
   {
-    $data['title'] = 'Issued Details';
-    $data['info'] = $this->issue->details('issue_table', $this->uri->segment(3));
-    $this->load->view('application/issued_details',$data);
+    if(isset($_SESSION['name'])){
+      $data['title'] = 'Issued Details';
+      $data['info'] = $this->issue->details('issue_table', $this->uri->segment(3));
+      $this->load->view('application/issued_details',$data);
+    }
+    else{
+      redirect('auth/login');
+    }
+    
   }
 
   public  function editissue()
   {
-    $data['title'] = 'Edit Issued Details';
-    $data['info'] = $this->issue->details('issue_table', $this->uri->segment(3));
-    $this->load->view('application/issued_edit',$data);
+    if(isset($_SESSION['name'])){
+      $data['title'] = 'Edit Issued Details';
+      $data['info'] = $this->issue->details('issue_table', $this->uri->segment(3));
+      $this->load->view('application/issued_edit',$data);
+    }
+    else{
+      redirect('auth/login');
+    }
+    
   }
 
   public  function updateissue()
   {
     $member = $this->input->post('member');
+    $memberold = $this->input->post('old_member');
 		$code = $this->input->post('code');
 		$old = $this->input->post('old_code');
 
-    if($code!=$old){
+    if($code!=$old||$member!=$memberold){
       $data = array(
         'member' => $member, 
         'code' => $code, 
