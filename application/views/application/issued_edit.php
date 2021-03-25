@@ -95,7 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="py-3 text-center">
                 <i class="ni ni-bell-55 ni-3x"></i>
                 <h4 class="heading mt-4">Success!</h4>
-                <p>Successfully Added New Books</p>
+                <p>Successfully Updated Issued Book</p>
               </div>
                 
             </div>

@@ -262,7 +262,53 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="py-3 text-center">
                 <i class="ni ni-bell-55 ni-3x"></i>
                 <h4 class="heading mt-4">Success!</h4>
-                <p>Successfully Added New Categories</p>
+                <p>Successfully Added New Admin</p>
+              </div>
+                
+            </div>
+              
+            <div class="modal-footer mt-0">
+              <button type="button" class="btn btn-white" data-dismiss="modal">Ok, Got it</button>
+              <!-- <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button> -->
+            </div>
+              
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modal-notification-success-edit" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+        <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+          <div class="modal-content bg-gradient-success">
+
+          <div class="modal-body">
+              
+              <div class="py-3 text-center">
+                <i class="ni ni-bell-55 ni-3x"></i>
+                <h4 class="heading mt-4">Success!</h4>
+                <p>Successfully Updated Admin</p>
+              </div>
+                
+            </div>
+              
+            <div class="modal-footer mt-0">
+              <button type="button" class="btn btn-white" data-dismiss="modal">Ok, Got it</button>
+              <!-- <button type="button" class="btn btn-link text-white ml-auto" data-dismiss="modal">Close</button> -->
+            </div>
+              
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="modal-notification-success-delete" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
+        <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+          <div class="modal-content bg-gradient-success">
+
+          <div class="modal-body">
+              
+              <div class="py-3 text-center">
+                <i class="ni ni-bell-55 ni-3x"></i>
+                <h4 class="heading mt-4">Success!</h4>
+                <p>Successfully Deleted</p>
               </div>
                 
             </div>
@@ -531,7 +577,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
               if(json.msg=='success'){
                 list(query);
-                $('#modal-notification-success').modal('show')
+                $('#modal-notification-success-edit').modal('show')
               }
               else if(json.msg=='error'){
                 $('#modal-notification-danger').modal('show')
@@ -563,7 +609,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             var json = JSON.parse(data);
 
             if(json.msg=='success'){
-              $('#modal-notification-success').modal('show')
+              $('#modal-notification-success-delete').modal('show')
               list(query);
             }
             else if(json.msg=='error'){
@@ -587,39 +633,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             $(this).removeAttr("disabled");
         }
       })
-
-      $(document).on('click','.delete-btn', function(){
-        $('.sure-btn').attr('id', $(this).attr('id'));
-        $('#modal-notification-remind').modal('show');
-      });
-
-      $(document).on('click', '.sure-btn', function(){
-        
-        var data = new FormData();
-        
-        data.append('id', $(this).attr('id'));
-
-        $.ajax({
-          url: "<?php echo base_url()?>students/deletestudent",
-          data: data,
-          type: "POST",
-          contentType:false,
-          processData:false,
-          success: function (data) {
-
-            var json = JSON.parse(data);
-
-            if(json.msg=='success'){
-              $('#modal-notification-success').modal('show')
-              list(query);
-            }
-            else if(json.msg=='error'){
-              $('#modal-notification-danger').modal('show')
-            }
-          }
-        });
-
-      });
 
       var box = false;
 
