@@ -21,6 +21,8 @@ class Auth extends CI_Controller {
 		
 		if(!isset($_SESSION['name'])){
 			$this->load->view('login');
+		}else{
+			redirect('app/dashboard');
 		}
 	}
 	

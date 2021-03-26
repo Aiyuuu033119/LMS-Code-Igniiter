@@ -76,25 +76,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   </div>
                   <span class="text-danger pass-error"><small>&nbsp;</small></span>
                 </div>
-                <div class="custom-control custom-control-alternative custom-checkbox">
+                <!-- <div class="custom-control custom-control-alternative custom-checkbox">
                   <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
                   <label class="custom-control-label" for=" customCheckLogin">
                     <span class="text-muted">Remember me</span>
                   </label>
-                </div>
+                </div> -->
                 <div class="text-center">
                   <button type="button" class="btn btn-primary my-4 signin__button">Sign in</button>
                 </div>
             </div>
           </div>
-          <div class="row mt-3">
+          <!-- <div class="row mt-3">
             <div class="col-6">
               <a href="#" class="text-light"><small>Forgot password?</small></a>
             </div>
             <div class="col-6 text-right">
               <a href="#" class="text-light"><small>Create new account</small></a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
