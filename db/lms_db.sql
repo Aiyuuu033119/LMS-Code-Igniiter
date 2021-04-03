@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2021 at 02:52 AM
+-- Generation Time: Apr 03, 2021 at 05:36 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -48,19 +48,33 @@ CREATE TABLE `book_table` (
 --
 
 INSERT INTO `book_table` (`id`, `code`, `code_id`, `status`, `book`, `author`, `price`, `rack`, `arrival`, `count`, `total`, `class`, `timestamp`) VALUES
-(1, 'AAAA', 'AAAA0', 'Available', 'Revoultionary Army', 'One Piece', '125', '5', 'Jan 06 2001', '3', '3', 'ANM', '2021-02-20 12:31:17.000000'),
-(2, 'AAAA', 'AAAA1', 'Available', 'Revoultionary Army', 'One Piece', '125', '5', 'Jan 10 2021', '3', '3', 'ANM', '2021-02-20 12:31:14.000000'),
-(3, 'AAAA', 'AAAA2', 'Available', 'Revolutionay Army', 'One Piece', '125', '5', 'Jan 06 2001', '3', '3', 'ANM', '2021-02-20 12:31:20.000000'),
-(4, 'AAAB', 'AAAB0', 'Pending', 'Kara', 'Boruto', '105', '3', 'Jan 10 2001', '1', '2', 'ANM', '2021-02-20 12:31:11.000000'),
-(5, 'AAAB', 'AAAB1', 'Available', 'Kara', 'Boruto', '105', '3', 'Jan 10 2001', '1', '2', 'ANM', '2021-02-20 12:31:04.000000'),
-(36, 'FTAY', 'FTAY0', 'Available', 'Rizal\'s Life', 'Jose Rizal', '85', '3', '2021-11-23', '8', '8', '3', '2021-02-22 01:30:01.574631'),
-(37, 'FTAY', 'FTAY1', 'Available', 'Rizal\'s Life', 'Jose Rizal', '85', '3', '2021-11-23', '8', '8', '3', '2021-02-22 01:30:01.574631'),
-(38, 'FTAY', 'FTAY2', 'Available', 'Rizal\'s Life', 'Jose Rizal', '85', '3', '2021-11-23', '8', '8', '3', '2021-02-22 01:30:01.574631'),
-(45, 'FTAY', 'FTAY3', 'Available', 'Rizal\'s Life', 'Jose Rizal', '85', '3', '2021-11-23', '8', '8', '3', '2021-02-22 02:19:14.334472'),
-(46, 'FTAY', 'FTAY4', 'Available', 'Rizal\'s Life', 'Jose Rizal', '85', '3', '2021-11-23', '8', '8', '3', '2021-02-22 02:19:14.334472'),
-(47, 'FTAY', 'FTAY5', 'Available', 'Rizal\'s Life', 'Jose Rizal', '85', '3', '2021-11-23', '8', '8', '3', '2021-02-22 02:24:28.842625'),
-(48, 'FTAY', 'FTAY6', 'Available', 'Rizal\'s Life', 'Jose Rizal', '85', '3', '2021-11-23', '8', '8', '3', '2021-02-22 02:25:29.033520'),
-(49, 'FTAY', 'FTAY7', 'Available', 'Rizal\'s Life', 'Jose Rizal', '85', '3', '2021-11-23', '8', '8', '3', '2021-02-22 02:25:29.033520');
+(53, 'DXLT', 'DXLT0', 'Available', 'Algebra 1', 'Mimiyuh', '230', '1', '2021-04-02', '2', '2', 'MATH', '2021-04-02 16:11:59.887807'),
+(54, 'DXLT', 'DXLT1', 'Available', 'Algebra 1', 'Mimiyuh', '230', '1', '2021-04-02', '2', '2', 'MATH', '2021-04-02 16:11:59.887807'),
+(56, 'SRYI', 'SRYI0', 'Pending', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 16:22:10.758815'),
+(57, 'SRYI', 'SRYI1', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 16:22:10.758815'),
+(58, 'SRYI', 'SRYI2', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 16:22:10.758815'),
+(59, 'SRYI', 'SRYI3', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 16:22:10.758815'),
+(60, 'SRYI', 'SRYI4', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 16:22:10.758815'),
+(61, 'JRTI', 'JRTI0', 'Pending', 'Different Festival in the Phillipines ', 'Jose Makatarungan', '182', '7', '2021-04-03', '2', '3', 'ARTS', '2021-04-03 12:35:51.691706'),
+(62, 'JRTI', 'JRTI1', 'Available', 'Different Festival in the Phillipines ', 'Jose Makatarungan', '182', '7', '2021-04-03', '2', '3', 'ARTS', '2021-04-03 12:35:51.691706'),
+(63, 'JRTI', 'JRTI2', 'Available', 'Different Festival in the Phillipines ', 'Jose Makatarungan', '182', '7', '2021-04-03', '2', '3', 'ARTS', '2021-04-03 12:35:51.691706'),
+(64, 'EOVS', 'EOVS0', 'Available', 'Biology', 'Julius Explorer', '300', '9', '2021-04-03', '2', '2', 'SCI', '2021-04-03 12:37:38.562829'),
+(65, 'EOVS', 'EOVS1', 'Available', 'Biology', 'Julius Explorer', '300', '9', '2021-04-03', '2', '2', 'SCI', '2021-04-03 12:37:38.562829'),
+(66, 'FNPM', 'FNPM0', 'Pending', 'Physics ', 'Mweton Drigder', '290', '9', '2021-04-03', '2', '3', 'SCI', '2021-04-03 12:38:59.967925'),
+(67, 'FNPM', 'FNPM1', 'Available', 'Physics ', 'Mweton Drigder', '290', '9', '2021-04-03', '2', '3', 'SCI', '2021-04-03 12:38:59.967925'),
+(68, 'FNPM', 'FNPM2', 'Available', 'Physics ', 'Mweton Drigder', '290', '9', '2021-04-03', '2', '3', 'SCI', '2021-04-03 12:38:59.967925'),
+(69, 'UVOL', 'UVOL0', 'Pending', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
+(70, 'UVOL', 'UVOL1', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
+(71, 'UVOL', 'UVOL2', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
+(72, 'UVOL', 'UVOL3', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
+(73, 'UVOL', 'UVOL4', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
+(74, 'UVOL', 'UVOL5', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
+(75, 'UVOL', 'UVOL6', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
+(76, 'UVOL', 'UVOL7', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
+(77, 'UVOL', 'UVOL8', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
+(78, 'UVOL', 'UVOL9', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
+(79, 'UBHG', 'UBHG0', 'Available', 'Web Design and Development', 'ian Destura', '450', '11', '2021-04-03', '2', '2', 'TECH', '2021-04-03 13:02:15.061876'),
+(80, 'UBHG', 'UBHG1', 'Available', 'Web Design and Development', 'ian Destura', '450', '11', '2021-04-03', '2', '2', 'TECH', '2021-04-03 13:02:15.061876');
 
 -- --------------------------------------------------------
 
@@ -79,16 +93,17 @@ CREATE TABLE `class_table` (
 --
 
 INSERT INTO `class_table` (`id`, `code`, `categories`) VALUES
-(1, 'MATH', 'Mathematics'),
-(3, 'HIS', 'History'),
-(4, 'ENG', 'English'),
-(5, 'FIL', 'Filipino'),
-(6, 'PE', 'Physical Education'),
-(7, 'A&M', 'Arts and Music'),
-(8, 'ENGR', 'Engineering'),
-(9, 'TECH', 'Technology'),
-(10, 'SCIFI', 'Science Fiction'),
-(15, 'HOR', 'Horror');
+(20, 'HIS', 'History'),
+(21, 'MATH', 'Mathematics'),
+(22, 'SCI', 'Science'),
+(23, 'TECH', 'Computers and Technology'),
+(24, 'BUSN', 'Business'),
+(25, 'ENG', 'English Literature'),
+(26, 'FIL', 'Filipino Literature'),
+(27, 'MUS', 'Music'),
+(28, 'PE', 'Physical Education'),
+(29, 'ARTS', 'Arts'),
+(30, 'ENGNR', 'Engineering');
 
 -- --------------------------------------------------------
 
@@ -111,7 +126,10 @@ CREATE TABLE `issue_table` (
 --
 
 INSERT INTO `issue_table` (`id`, `member`, `code`, `status`, `issued`, `return`, `timestamp`) VALUES
-(29, 'QWER1234', 'AAAB0', 'Pending', '2021-02-23', '2021-02-28', '2021-02-24 05:07:11.578081');
+(44, 'HSDZ5948', 'SRYI0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 12:28:31.432796'),
+(45, 'HSDZ5948', 'FNPM0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 12:39:27.872563'),
+(46, 'MGCE4851', 'JRTI0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 12:40:17.920353'),
+(47, 'MGCE4851', 'UVOL0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 12:41:51.545264');
 
 -- --------------------------------------------------------
 
@@ -132,7 +150,8 @@ CREATE TABLE `member_table` (
 --
 
 INSERT INTO `member_table` (`id`, `member_id`, `name`, `section`, `contact`) VALUES
-(1, 'QWER1234', 'Tom N. Jerry', '7-Masipag', '09123456789');
+(3, 'MGCE4851', 'Boruto Uzumaki', '9-Aluminum', '09123456789'),
+(4, 'HSDZ5948', 'Monkey D. Luffy', '10-Aristotle', '09123456789');
 
 -- --------------------------------------------------------
 
@@ -156,8 +175,7 @@ CREATE TABLE `return_table` (
 --
 
 INSERT INTO `return_table` (`id`, `member`, `code`, `release`, `expire`, `return`, `status`, `timestamp`) VALUES
-(11, 'QWER1234', 'AAAA0', '2021-02-23', '2021-02-28', '2021-03-02', 'Late', '2021-03-02 17:41:52.588698'),
-(12, 'QWER1234', 'FTAY0', '2021-03-02', '2021-03-10', '2021-03-02', 'Late', '2021-03-02 17:58:21.268268');
+(13, 'HSDZ5948', 'DXLT0', '2021-04-03', '2021-04-11', '2021-04-03', 'On Time', '2021-04-03 12:45:44.692287');
 
 -- --------------------------------------------------------
 
@@ -200,7 +218,8 @@ CREATE TABLE `user_table` (
 
 INSERT INTO `user_table` (`id`, `name`, `email`, `password`, `status`, `admin_level`) VALUES
 (1, 'Aries Hachaso', 'lms-aries@gmail.com', '0192023a7bbd73250516f069df18b500', 'Librarian', 1),
-(3, 'Ian Destura', 'idestura35@gmail.com', '0192023a7bbd73250516f069df18b500', 'Administrator', 0);
+(3, 'Ian Destura', 'idestura35@gmail.com', '0192023a7bbd73250516f069df18b500', 'Librarian Assistant', 0),
+(4, 'admin', 'admin@admin.com', '0192023a7bbd73250516f069df18b500', 'Super Administrator', 0);
 
 --
 -- Indexes for dumped tables
@@ -260,31 +279,31 @@ ALTER TABLE `user_table`
 -- AUTO_INCREMENT for table `book_table`
 --
 ALTER TABLE `book_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `class_table`
 --
 ALTER TABLE `class_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `issue_table`
 --
 ALTER TABLE `issue_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `member_table`
 --
 ALTER TABLE `member_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `return_table`
 --
 ALTER TABLE `return_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `setting_table`
@@ -296,7 +315,7 @@ ALTER TABLE `setting_table`
 -- AUTO_INCREMENT for table `user_table`
 --
 ALTER TABLE `user_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
