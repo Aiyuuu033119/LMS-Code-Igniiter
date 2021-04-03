@@ -551,6 +551,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $('#modal-form').modal('hide')
               if(json.msg=='success'){
                 $('#modal-notification-success').modal('show')
+                $('.member').val('');
+                $('.code').val('');
                 list(query);
               }
               else if(json.msg=='error'){
@@ -592,7 +594,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           success: function (data) {
 
             var json = JSON.parse(data);
-
+          // console.log(json);
+            // return false;
             if(json.msg=='success'){
               $('#modal-notification-success-delete').modal('show')
               list(query);

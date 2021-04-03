@@ -52,8 +52,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <?php
               $total = '';
+              $cat = '';
               foreach ($info as $data) {
                 $total = $data->total;
+                $cat = $data->class;
+
             ?>
             <div class="card-body">
               <form>
@@ -79,14 +82,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="col-lg-6">
                       <div class="form-group mb-2">
                         <label class="form-control-label" for="input-first-name">Categories</label>
-                        <select class="form-control class" id="exampleFormControlSelect1">
-                            <option value="1" <?php if(intval($data->class)==1){ echo 'selected';}?>>MATH</option>
-                            <option value="2" <?php if(intval($data->class)==2){ echo 'selected';}?>>SCIENCE</option>
-                            <option value="3" <?php if(intval($data->class)==3){ echo 'selected';}?>>HISTORY</option>
-                            <option value="4" <?php if(intval($data->class)==4){ echo 'selected';}?>>BUSINESS</option>
-                            <option value="5" <?php if(intval($data->class)==5){ echo 'selected';}?>>ENGINEERING</option>
-                            <option value="6" <?php if(intval($data->class)==6){ echo 'selected';}?>>TECHNOLOGIES</option>
-                        </select>
+                        <select class="form-control class" id="select1">
+                            <?php
+                              foreach ($categories as $key => $val) {
+                              ?>
+                                <option value="<?php echo $val->code ?>" <?php $val->code==$data->class ? 'selected' : '' ?>><?php echo $val->categories ?></option>
+                            <?php
+                              }
+                            ?>
+                          </select>
                         <span><small class="class-error text-red">&nbsp;</small></span>
                       </div>
                     </div>
@@ -162,7 +166,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="py-3 text-center">
                 <i class="ni ni-bell-55 ni-3x"></i>
                 <h4 class="heading mt-4">Success!</h4>
-                <p>Successfully Update New Books</p>
+                <p>Successfully Updated Books</p>
               </div>
                 
             </div>

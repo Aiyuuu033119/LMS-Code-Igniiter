@@ -115,7 +115,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <div class="container-fluid mt--6">
       <div class="row">
-        <div class="col-xl-8">
+        <div class="<?php if($_SESSION['status']=='Librarian Assistant'){echo 'col-xl-12';}else{echo 'col-xl-8';}?>">
           <div class="card">
             <div class="card-header border-0">
               <div class="row align-items-center">
@@ -145,33 +145,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
           </div>
         </div>
-        <div class="col-xl-4">
-          <div class="card">
-            <div class="card-header border-0">
-              <div class="row align-items-center">
-                <div class="col">
-                  <h3 class="mb-0">New Students</h3>
-                </div>
-                <div class="col text-right">
-                  <a href="<?php echo base_url()?>app/students" class="btn btn-sm btn-primary">See all</a>
+        <?php if($_SESSION['status']!='Librarian Assistant'){
+        ?>
+          <div class="col-xl-4">
+            <div class="card">
+              <div class="card-header border-0">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <h3 class="mb-0">New Students</h3>
+                  </div>
+                  <div class="col text-right">
+                    <a href="<?php echo base_url()?>app/students" class="btn btn-sm btn-primary">See all</a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="table-responsive">
-              <table class="table align-items-center table-flush">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Member ID</th>
-                    <th scope="col">Name</th>
-                  </tr>
-                </thead>
-                <tbody class="student">
+              <div class="table-responsive">
+                <table class="table align-items-center table-flush">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Member ID</th>
+                      <th scope="col">Name</th>
+                    </tr>
+                  </thead>
+                  <tbody class="student">
 
-                </tbody>
-              </table>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
+        <?php
+          }
+        ?>
       </div>
 
       <?php
@@ -233,7 +238,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       +'</tr>';
               });
             }else{
-              html+='<tr><th style="text-align:center" colspan="4">No Issued Books Available</th></tr>'
+              html+='<tr><th style="text-align:center" colspan="5">No New Books</th></tr>'
             }
 
             html+='<tr><th></th><th></th><th></th><th></th><th></th></tr>'
@@ -273,7 +278,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       +'</tr>';
               });
             }else{
-              html+='<tr><th style="text-align:center" colspan="2">No Issued Books Available</th></tr>'
+              html+='<tr><th style="text-align:center" colspan="2">No New Students</th></tr>'
             }
 
             html+='<tr><th></th><th></th></tr>'

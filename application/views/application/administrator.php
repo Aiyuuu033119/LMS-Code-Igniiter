@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="modal-body p-0">
               <div class="card bg-secondary border-0 mb-0">
                 <div class="card-header bg-transparent" style="display: flex;justify-content: space-between;align-items: center;">
-                  <div class="text-muted text-center"><h2 class="mb-0">New Students</h2></div>
+                  <div class="text-muted text-center"><h2 class="mb-0">New User</h2></div>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                   </button>
@@ -103,9 +103,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <div class="form-group mb-0">
                         <div class="input-group input-group-merge input-group-alternative">
                           <select class="form-control status" id="exampleFormControlSelect1">
-                            <option value="Super Administrator">Super Administrator</option>
-                            <option value="Administrator">Administrator</option>
                             <option value="Librarian">Librarian</option>
+                            <option value="Administrator">Librarian Assistant</option>
                           </select>
                         </div>
                       </div>
@@ -139,7 +138,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="modal-body p-0">
               <div class="card bg-secondary border-0 mb-0">
                 <div class="card-header bg-transparent" style="display: flex;justify-content: space-between;align-items: center;">
-                  <div class="text-muted text-center"><h2 class="mb-0">Edit Categories</h2></div>
+                  <div class="text-muted text-center"><h2 class="mb-0">Edit User</h2></div>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                   </button>
@@ -172,9 +171,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <div class="form-group mb-0">
                         <div class="input-group input-group-merge input-group-alternative">
                           <select class="form-control status-edit" id="exampleFormControlSelect1">
-                            <option value="Super Administrator">Super Administrator</option>
-                            <option value="Administrator">Administrator</option>
                             <option value="Librarian">Librarian</option>
+                            <option value="Administrator">Librarian Assistant</option>
                           </select>
                         </div>
                       </div>
@@ -358,16 +356,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             var json = JSON.parse(data);
             
             var html = '';
+            var action = '';
 
             if(json!=''){
               json.forEach(element => {
-
-                html += '<tr>'
-                    +'<th scope="col" class="sort" data-sort="budget">'+element.name+'</th>'
-                    +'<td scope="col" class="sort" data-sort="budget">'+element.email+'</td>'
-                    +'<td scope="col" class="sort" data-sort="name">'+element.status+'</td>'
-                    +'<td class="text-center">'
-                        +'<div class="dropdown">'
+                if(element.status!="Super Administrator"&&element.name!='<?php echo $_SESSION['name']?>'){
+                  action = '<div class="dropdown">'
                           +'<a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'
                             +'<i class="fas fa-ellipsis-v"></i>'
                           +'</a>'
@@ -375,7 +369,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             +'<a class="dropdown-item edit-btn" id="'+element.id+'" >Edit</a>'
                             +'<a class="dropdown-item delete-btn" id="'+element.id+'">Delete</a>'
                           +'</div>'
-                        +'</div>'
+                        +'</div>';
+                }else{
+                  action ="-";
+                }
+                html += '<tr>'
+                    +'<th scope="col" class="sort" data-sort="budget">'+element.name+'</th>'
+                    +'<td scope="col" class="sort" data-sort="budget">'+element.email+'</td>'
+                    +'<td scope="col" class="sort" data-sort="name">'+element.status+'</td>'
+                    +'<td class="text-center">'
+                        +action
                       +'</td>'
                   +'</tr>';
               });
@@ -577,6 +580,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
               if(json.msg=='success'){
                 list(query);
+                $('.name-edit').val('');
+                $('.email-edit').val('');
+                $('.status-edit option:nth-child(1)').attr('selected', 'true');
                 $('#modal-notification-success-edit').modal('show')
               }
               else if(json.msg=='error'){

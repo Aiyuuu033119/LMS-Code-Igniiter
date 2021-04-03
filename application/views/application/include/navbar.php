@@ -24,7 +24,7 @@
               <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <div class="media align-items-center">
                   <span class="avatar avatar-sm rounded-circle">
-                    <img alt="Image placeholder" src="<?php echo base_url()?>/assets/img/theme/team-4.jpg">
+                    <img alt="Image placeholder" src="<?php echo base_url()?>/assets/img/theme/team-4.png">
                   </span>
                   <div class="media-body  ml-2  d-none d-lg-block">
                     <span class="mb-0 text-sm  font-weight-bold name-3"><?php echo $_SESSION['name']?></span>
@@ -37,12 +37,17 @@
                 </div>
                 <a href="<?php echo base_url()?>app/profile" class="dropdown-item">
                   <i class="ni ni-single-02"></i>
-                  <span>My profile</span>
+                  <span>My Profile</span>
                 </a>
-                <a href="<?php echo base_url()?>app/settings" class="dropdown-item">
-                  <i class="ni ni-settings-gear-65"></i>
-                  <span>Settings</span>
-                </a>
+                <?php if($_SESSION['status']!='Librarian Assistant'){
+                ?>
+                  <a href="<?php echo base_url()?>app/settings" class="dropdown-item">
+                    <i class="ni ni-settings-gear-65"></i>
+                    <span>Settings</span>
+                  </a>
+                <?php
+                  }
+                ?>
                 <div class="dropdown-divider"></div>
                 <a href="<?php echo base_url();?>auth/logout" class="dropdown-item">
                   <i class="ni ni-user-run"></i>

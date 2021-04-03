@@ -445,6 +445,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 if(json.msg=='success'){
                     list(query);
+                    $('.name').val('');
+                    $('.section').val('');
+                    $('.contact').val('');
                     $('#modal-notification-success').modal('show')
                 }
                 else if(json.msg=='error'){

@@ -29,7 +29,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
+              <?php if($_SESSION['status']!='Librarian Assistant'){
+              ?>
               <a class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#modal-form"><i class="fas fa-plus"></i>&nbsp;Add</a>
+              <?php
+                }
+              ?>
             </div>
           </div>
         </div>
@@ -65,12 +70,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           </div>
         </div>
       </div>
-      
-
-      <!-- <div class="col-md-4">
-        <button button type="button" class="btn btn-block btn-default" data-toggle="modal" data-target="#modal-form">Form</button>
-        
-      </div> -->
 
       <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true" style="z-index:10001">
         <div class="modal-dialog modal- modal-dialog-centered modal-lg" role="document">
@@ -113,13 +112,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           <div class="input-group-prepend">
                               <span class="input-group-text"><i class="ni ni-bullet-list-67"></i></span>
                           </div>
-                          <select class="form-control class" id="exampleFormControlSelect1">
-                            <option value="1">MATH</option>
-                            <option value="2">SCIENCE</option>
-                            <option value="3">HISTORY</option>
-                            <option value="4">BUSINESS</option>
-                            <option value="5">ENGINEERING</option>
-                            <option value="6">TECHNOLOGIES</option>
+                          <select class="form-control class" id="select1">
+                            <?php
+                              foreach ($categories as $key => $data) {
+                                echo '<option value="'.$data->code.'">'.$data->categories.'</option>';
+                              }
+                            ?>
                           </select>
                         </div>
                       </div>
@@ -234,6 +232,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <script src="<?php echo base_url();?>assets/vendor/js-cookie/js.cookie.js"></script>
   <script src="<?php echo base_url();?>assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
   <script src="<?php echo base_url();?>assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <script src="<?php echo base_url()?>assets/vendor/select2/dist/js/select2.min.js"></script>
   <!-- Argon JS -->
   <script src="<?php echo base_url();?>assets/js/argon.js?v=1.2.0"></script>
   <script>
@@ -284,7 +283,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                           +element.author
                         +'</td>'
                         +'<td>'
-                          +'<span class="status">SCFI</span>'
+                          +'<span class="status">'+element.class+'</span>'
                         +'</td>'
                         +'<td>'
                           +'<span class="badge badge-dot mr-4">'
@@ -304,8 +303,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             +'</a>'
                             +'<div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">'
                               +'<a class="dropdown-item details-btn" id="'+element.code+'">Details</a>'
-                              +'<a class="dropdown-item edit-btn" id="'+element.code+'">Edit</a>'
-                              +'<a class="dropdown-item delete-btn" id="'+element.code+'">Delete</a>'
+                              +'<a style="display:<?php if($_SESSION['status']=='Librarian Assistant'){echo 'none';}?>" class="dropdown-item edit-btn" id="'+element.code+'">Edit</a>'
+                              +'<a style="display:<?php if($_SESSION['status']=='Librarian Assistant'){echo 'none';}?>" class="dropdown-item delete-btn" id="'+element.code+'">Delete</a>'
                             +'</div>'
                           +'</div>'
                         +'</td>'
@@ -349,7 +348,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         var count = $('.count').val();
         var rack = $('.rack').val();
         var date = $('.date').val();
-
         var hasError = null;
 
         if(book==''&&author==''&&price==''&&count==''&&rack==''){
@@ -400,6 +398,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           }, 2000);
           hasError = true;
         }
+        if(clss==null){
+          $('.class-error').text('Categories*')
+          setTimeout(function(){
+            $('.class-error').text('')
+            $('.class-error').append('&nbsp;')
+          }, 2000);
+          hasError = true;
+        }
         if(count==''){
           $('.count-error').text('Count*')
           setTimeout(function(){
@@ -441,6 +447,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $('#modal-form').modal('hide')
               if(json.msg=='success'){
                 $('#modal-notification-success').modal('show')
+                $('.book-name').val('');
+                $('.author').val('');
+                $('.class').val('');
+                $('.class option:nth-child(1)').attr('selected', 'true');
+                $('.price').val('');
+                $('.count').val('');
+                $('.rack').val('');
                 books(query);
               }
               else if(json.msg=='error'){

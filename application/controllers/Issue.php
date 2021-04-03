@@ -165,7 +165,25 @@ class Issue extends CI_Controller {
     );
 
     $info = $this->issue->update('book_table', $data, 'code_id', $code);
-    
+
+    $gencode = substr($code, 0, -1);
+    $total = $this->book->count('book_table',$gencode, '');
+    $status = $this->book->count('book_table',$gencode, 'Available');
+    $status = ($status-1) + 1;
+
+    $data = array();
+    $items = array();
+    for ($i=0; $i < $total; $i++) { 
+      $items = array(
+        'count' => $status, 
+        'code' => $gencode, 
+      );
+
+      array_push($data, $items);
+    }
+
+    $info = $this->issue->updatebatch('book_table',$data, 'code');
+
     echo json_encode($info);
 
   }

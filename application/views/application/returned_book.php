@@ -402,11 +402,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       
                       var json = JSON.parse(data);
 
-                      console.log(json);
-                      $('.issue').val(json[0].issued);
-                      $('.expire').val(json[0].return);
-                      $('.issue').attr('style', 'border: 1px solid transparent');
-                      $('.expire').attr('style', 'border: 1px solid transparent');
+                      if(json.length == 0){
+                        $('.member-error').attr('class', ' member-error text-danger')
+                        $('.member-error').text('Member ID Invalid*')
+                  
+                        $('.issue').val('');
+                        $('.expire').val('');
+
+                        var memberHasError = true;
+                      }
+                      else{
+                        $('.issue').val(json[0].issued);
+                        $('.expire').val(json[0].return);
+                        $('.issue').attr('style', 'border: 1px solid transparent');
+                        $('.expire').attr('style', 'border: 1px solid transparent');
+                      }
                     }
                   });
                 }
@@ -470,10 +480,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       
                       var json = JSON.parse(data);
 
-                      $('.issue').val(json[0].issued);
-                      $('.expire').val(json[0].return);
-                      $('.issue').attr('style', 'border: 1px solid transparent');
-                      $('.expire').attr('style', 'border: 1px solid transparent');
+                      if(json.length==0){
+                        $('.code-error').attr('class', ' code-error text-danger')
+                        $('.code-error').text('Book Code Invalid*')
+
+                        $('.issue').val('');
+                        $('.expire').val('');
+                        
+                        var codeHasError = true;
+                      }else{
+                        $('.issue').val(json[0].issued);
+                        $('.expire').val(json[0].return);
+                        $('.issue').attr('style', 'border: 1px solid transparent');
+                        $('.expire').attr('style', 'border: 1px solid transparent');
+                      }
                     }
                   });
                 }
@@ -557,6 +577,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               $('#modal-form').modal('hide')
               if(json.msg=='success'){
                 list(query);
+                $('.member').val('');
+                $('.code').val('');
+                $('.issue').val('');
+                $('.expire').val('');
                 $('#modal-notification-success').modal('show')
               }
               else if(json.msg=='error'){

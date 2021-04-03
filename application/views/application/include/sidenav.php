@@ -48,42 +48,48 @@
                 <span class="nav-link-text">Returned Books</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link <?php echo $title == 'Categories' ? 'active' : '' ?>"
-                <?php 
-                  echo $title != 'Categories' ? "href=".base_url()."app/categories" : '';
-                ?>>
-                <i class="ni ni-bullet-list-67 text-pink"></i>
-                <span class="nav-link-text">Categories</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link <?php echo $title == 'Generate Reports' ? 'active' : '' ?>"
-                <?php 
-                  echo $title != 'Generate Reports' ? "href=".base_url()."app/generatereports" : '';
-                ?>>
-                <i class="ni ni-chart-pie-35 text-default"></i>
-                <span class="nav-link-text">Generate Reports</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link <?php echo $title == 'Students' ? 'active' : '' ?>"  
-                <?php 
-                  echo $title != 'Students' ? "href=".base_url()."app/students" : '';
-                ?>>
-                <i class="ni ni-badge text-pink"></i>
-                <span class="nav-link-text">Students</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link <?php echo $title == 'Administrator' ? 'active' : '' ?>"  
-                <?php 
-                  echo $title != 'Administrator' ? "href=".base_url()."app/administrator" : '';
-                ?>>
-                <i class="ni ni-circle-08 text-yellow"></i>
-                <span class="nav-link-text">Administrator</span>
-              </a>
-            </li>
+            <?php
+              if($_SESSION['status']!='Librarian Assistant'){
+            ?>
+              <li class="nav-item">
+                <a class="nav-link <?php echo $title == 'Categories' ? 'active' : '' ?>"
+                  <?php 
+                    echo $title != 'Categories' ? "href=".base_url()."app/categories" : '';
+                  ?>>
+                  <i class="ni ni-bullet-list-67 text-pink"></i>
+                  <span class="nav-link-text">Categories</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <?php echo $title == 'Generate Reports' ? 'active' : '' ?>"
+                  <?php 
+                    echo $title != 'Generate Reports' ? "href=".base_url()."app/generatereports" : '';
+                  ?>>
+                  <i class="ni ni-chart-pie-35 text-default"></i>
+                  <span class="nav-link-text">Generate Reports</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <?php echo $title == 'Students' ? 'active' : '' ?>"  
+                  <?php 
+                    echo $title != 'Students' ? "href=".base_url()."app/students" : '';
+                  ?>>
+                  <i class="ni ni-badge text-pink"></i>
+                  <span class="nav-link-text">Students</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link <?php echo $title == 'Administrator' ? 'active' : '' ?>"  
+                  <?php 
+                    echo $title != 'Administrator' ? "href=".base_url()."app/administrator" : '';
+                  ?>>
+                  <i class="ni ni-circle-08 text-yellow"></i>
+                  <span class="nav-link-text">Administrator</span>
+                </a>
+              </li>
+            <?php 
+              }
+            ?>
           </ul>
         </div>
       </div>

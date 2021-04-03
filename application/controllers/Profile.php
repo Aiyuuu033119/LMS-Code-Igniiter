@@ -25,14 +25,11 @@ class Profile extends CI_Controller {
     $data = array(
       'name' => $name, 
       'email' => $email, 
-    //   'password' => $password, 
-    //   'box' => $box, 
-    //   'id' => $id, 
     );
 
     $info = $this->return->verify('user_table', $data);
     
-    if(empty($info)){
+    if(empty($info)||$box==true){
       if($box==true){
 
         $data = array(

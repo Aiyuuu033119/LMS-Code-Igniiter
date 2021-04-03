@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
                   <a href="#">
-                    <img src="../assets/img/theme/team-4.jpg" class="rounded-circle">
+                    <img src="../assets/img/theme/team-4.png" class="rounded-circle">
                   </a>
                 </div>
               </div>
@@ -153,7 +153,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <div class="py-3 text-center">
                 <i class="ni ni-bell-55 ni-3x"></i>
                 <h4 class="heading mt-4">Success!</h4>
-                <p>Successfully Added New Books</p>
+                <p>Successfully Updated</p>
               </div>
                 
             </div>
@@ -245,6 +245,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           hasError = true;
         }
 
+        var compareName = '<?php echo $data->name?>'; 
+        var compareEmail = '<?php echo $data->email?>'; 
+
+        if(name==compareName&&email==compareEmail&&pass=='admin123'&&box==false){
+          return false;
+        }
+
         if(hasError==false){
           var data = new FormData();
         
@@ -275,6 +282,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 box = false;
                 $('.password').attr('disabled',true)
                 $('.password').val('**********');
+                compareName = name;
+                compareEmail = email;
                 $('#modal-notification-success').modal('show')
               }
               else if(json.msg=='error'){

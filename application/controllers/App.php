@@ -8,6 +8,7 @@ class App extends CI_Controller {
 
         $this->load->helper('url');
 		$this->load->model('Return_Model', 'return');
+		$this->load->model('Categories_Model', 'class');
 		$this->load->model('Model', 'model');
 	}
 
@@ -31,6 +32,7 @@ class App extends CI_Controller {
 	{
 		if(isset($_SESSION['name'])){
 	        $data['title'] = 'Book List';
+			$data['categories']= $this->class->get('class_table','');
 			$this->load->view('application/booklist',$data);
 		}
 		else{

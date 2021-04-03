@@ -8,6 +8,7 @@ class Book extends CI_Controller {
 
         $this->load->helper('url');
         $this->load->model('Book_Model', 'book');
+        $this->load->model('Categories_Model', 'class');
   }
 
   public  function booklist()
@@ -128,6 +129,7 @@ class Book extends CI_Controller {
     
     if(isset($_SESSION['name'])){
       $data['title'] = 'Edit Books';
+      $data['categories']= $this->class->get('class_table','');
       $data['info'] = $this->book->bookinfo('book_table',array('code' => $this->uri->segment(3)), true);
       $data['status'] = $this->book->bookinfo('book_table',array('code' => $this->uri->segment(3)), false);
       $this->load->view('application/booklist_edit',$data);

@@ -43,6 +43,7 @@ class Auth extends CI_Controller {
 				$sessionArray = array(
 					'msg' => 'success',
 					'name' => $name,
+					'status' => $info[0]->status,
 					'id' => $id,
 				);
 
