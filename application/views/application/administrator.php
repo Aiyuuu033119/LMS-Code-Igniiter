@@ -652,7 +652,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
         else{
           $('.pass-edit').attr('disabled',true)
-          $('.pass-edit').val('*******');
+          $('.pass-edit').val('admin123');
 
         }
       });
