@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2021 at 05:36 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Sep 28, 2021 at 03:40 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,33 +48,33 @@ CREATE TABLE `book_table` (
 --
 
 INSERT INTO `book_table` (`id`, `code`, `code_id`, `status`, `book`, `author`, `price`, `rack`, `arrival`, `count`, `total`, `class`, `timestamp`) VALUES
-(53, 'DXLT', 'DXLT0', 'Available', 'Algebra 1', 'Mimiyuh', '230', '1', '2021-04-02', '2', '2', 'MATH', '2021-04-02 16:11:59.887807'),
-(54, 'DXLT', 'DXLT1', 'Available', 'Algebra 1', 'Mimiyuh', '230', '1', '2021-04-02', '2', '2', 'MATH', '2021-04-02 16:11:59.887807'),
-(56, 'SRYI', 'SRYI0', 'Pending', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 16:22:10.758815'),
-(57, 'SRYI', 'SRYI1', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 16:22:10.758815'),
-(58, 'SRYI', 'SRYI2', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 16:22:10.758815'),
-(59, 'SRYI', 'SRYI3', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 16:22:10.758815'),
-(60, 'SRYI', 'SRYI4', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 16:22:10.758815'),
-(61, 'JRTI', 'JRTI0', 'Pending', 'Different Festival in the Phillipines ', 'Jose Makatarungan', '182', '7', '2021-04-03', '2', '3', 'ARTS', '2021-04-03 12:35:51.691706'),
-(62, 'JRTI', 'JRTI1', 'Available', 'Different Festival in the Phillipines ', 'Jose Makatarungan', '182', '7', '2021-04-03', '2', '3', 'ARTS', '2021-04-03 12:35:51.691706'),
-(63, 'JRTI', 'JRTI2', 'Available', 'Different Festival in the Phillipines ', 'Jose Makatarungan', '182', '7', '2021-04-03', '2', '3', 'ARTS', '2021-04-03 12:35:51.691706'),
-(64, 'EOVS', 'EOVS0', 'Available', 'Biology', 'Julius Explorer', '300', '9', '2021-04-03', '2', '2', 'SCI', '2021-04-03 12:37:38.562829'),
-(65, 'EOVS', 'EOVS1', 'Available', 'Biology', 'Julius Explorer', '300', '9', '2021-04-03', '2', '2', 'SCI', '2021-04-03 12:37:38.562829'),
-(66, 'FNPM', 'FNPM0', 'Pending', 'Physics ', 'Mweton Drigder', '290', '9', '2021-04-03', '2', '3', 'SCI', '2021-04-03 12:38:59.967925'),
-(67, 'FNPM', 'FNPM1', 'Available', 'Physics ', 'Mweton Drigder', '290', '9', '2021-04-03', '2', '3', 'SCI', '2021-04-03 12:38:59.967925'),
-(68, 'FNPM', 'FNPM2', 'Available', 'Physics ', 'Mweton Drigder', '290', '9', '2021-04-03', '2', '3', 'SCI', '2021-04-03 12:38:59.967925'),
-(69, 'UVOL', 'UVOL0', 'Pending', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
-(70, 'UVOL', 'UVOL1', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
-(71, 'UVOL', 'UVOL2', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
-(72, 'UVOL', 'UVOL3', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
-(73, 'UVOL', 'UVOL4', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
-(74, 'UVOL', 'UVOL5', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
-(75, 'UVOL', 'UVOL6', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
-(76, 'UVOL', 'UVOL7', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
-(77, 'UVOL', 'UVOL8', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
-(78, 'UVOL', 'UVOL9', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 12:41:08.463974'),
-(79, 'UBHG', 'UBHG0', 'Available', 'Web Design and Development', 'ian Destura', '450', '11', '2021-04-03', '2', '2', 'TECH', '2021-04-03 13:02:15.061876'),
-(80, 'UBHG', 'UBHG1', 'Available', 'Web Design and Development', 'ian Destura', '450', '11', '2021-04-03', '2', '2', 'TECH', '2021-04-03 13:02:15.061876');
+(53, 'DXLT', 'DXLT0', 'Available', 'Algebra 1', 'Mimiyuh', '230', '1', '2021-04-02', '2', '2', 'MATH', '2021-04-02 08:11:59.887807'),
+(54, 'DXLT', 'DXLT1', 'Available', 'Algebra 1', 'Mimiyuh', '230', '1', '2021-04-02', '2', '2', 'MATH', '2021-04-02 08:11:59.887807'),
+(56, 'SRYI', 'SRYI0', 'Pending', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 08:22:10.758815'),
+(57, 'SRYI', 'SRYI1', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 08:22:10.758815'),
+(58, 'SRYI', 'SRYI2', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 08:22:10.758815'),
+(59, 'SRYI', 'SRYI3', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 08:22:10.758815'),
+(60, 'SRYI', 'SRYI4', 'Available', 'Makabayan', 'Jonh Doe', '120', '10', '2021-04-02', '4', '5', 'HIS', '2021-04-02 08:22:10.758815'),
+(61, 'JRTI', 'JRTI0', 'Pending', 'Different Festival in the Phillipines ', 'Jose Makatarungan', '182', '7', '2021-04-03', '2', '3', 'ARTS', '2021-04-03 04:35:51.691706'),
+(62, 'JRTI', 'JRTI1', 'Available', 'Different Festival in the Phillipines ', 'Jose Makatarungan', '182', '7', '2021-04-03', '2', '3', 'ARTS', '2021-04-03 04:35:51.691706'),
+(63, 'JRTI', 'JRTI2', 'Available', 'Different Festival in the Phillipines ', 'Jose Makatarungan', '182', '7', '2021-04-03', '2', '3', 'ARTS', '2021-04-03 04:35:51.691706'),
+(64, 'EOVS', 'EOVS0', 'Available', 'Biology', 'Julius Explorer', '300', '9', '2021-04-03', '2', '2', 'SCI', '2021-04-03 04:37:38.562829'),
+(65, 'EOVS', 'EOVS1', 'Available', 'Biology', 'Julius Explorer', '300', '9', '2021-04-03', '2', '2', 'SCI', '2021-04-03 04:37:38.562829'),
+(66, 'FNPM', 'FNPM0', 'Pending', 'Physics ', 'Mweton Drigder', '290', '9', '2021-04-03', '2', '3', 'SCI', '2021-04-03 04:38:59.967925'),
+(67, 'FNPM', 'FNPM1', 'Available', 'Physics ', 'Mweton Drigder', '290', '9', '2021-04-03', '2', '3', 'SCI', '2021-04-03 04:38:59.967925'),
+(68, 'FNPM', 'FNPM2', 'Available', 'Physics ', 'Mweton Drigder', '290', '9', '2021-04-03', '2', '3', 'SCI', '2021-04-03 04:38:59.967925'),
+(69, 'UVOL', 'UVOL0', 'Pending', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 04:41:08.463974'),
+(70, 'UVOL', 'UVOL1', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 04:41:08.463974'),
+(71, 'UVOL', 'UVOL2', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 04:41:08.463974'),
+(72, 'UVOL', 'UVOL3', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 04:41:08.463974'),
+(73, 'UVOL', 'UVOL4', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 04:41:08.463974'),
+(74, 'UVOL', 'UVOL5', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 04:41:08.463974'),
+(75, 'UVOL', 'UVOL6', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 04:41:08.463974'),
+(76, 'UVOL', 'UVOL7', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 04:41:08.463974'),
+(77, 'UVOL', 'UVOL8', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 04:41:08.463974'),
+(78, 'UVOL', 'UVOL9', 'Available', 'DOREMI', 'Regine Songer', '260', '8', '2021-04-03', '9', '10', 'MUS', '2021-04-03 04:41:08.463974'),
+(79, 'UBHG', 'UBHG0', 'Available', 'Web Design and Development', 'ian Destura', '450', '11', '2021-04-03', '2', '2', 'TECH', '2021-04-03 05:02:15.061876'),
+(80, 'UBHG', 'UBHG1', 'Available', 'Web Design and Development', 'ian Destura', '450', '11', '2021-04-03', '2', '2', 'TECH', '2021-04-03 05:02:15.061876');
 
 -- --------------------------------------------------------
 
@@ -126,10 +126,10 @@ CREATE TABLE `issue_table` (
 --
 
 INSERT INTO `issue_table` (`id`, `member`, `code`, `status`, `issued`, `return`, `timestamp`) VALUES
-(44, 'HSDZ5948', 'SRYI0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 12:28:31.432796'),
-(45, 'HSDZ5948', 'FNPM0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 12:39:27.872563'),
-(46, 'MGCE4851', 'JRTI0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 12:40:17.920353'),
-(47, 'MGCE4851', 'UVOL0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 12:41:51.545264');
+(44, 'HSDZ5948', 'SRYI0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 04:28:31.432796'),
+(45, 'HSDZ5948', 'FNPM0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 04:39:27.872563'),
+(46, 'MGCE4851', 'JRTI0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 04:40:17.920353'),
+(47, 'MGCE4851', 'UVOL0', 'Pending', '2021-04-03', '2021-04-11', '2021-04-03 04:41:51.545264');
 
 -- --------------------------------------------------------
 
@@ -175,7 +175,7 @@ CREATE TABLE `return_table` (
 --
 
 INSERT INTO `return_table` (`id`, `member`, `code`, `release`, `expire`, `return`, `status`, `timestamp`) VALUES
-(13, 'HSDZ5948', 'DXLT0', '2021-04-03', '2021-04-11', '2021-04-03', 'On Time', '2021-04-03 12:45:44.692287');
+(13, 'HSDZ5948', 'DXLT0', '2021-04-03', '2021-04-11', '2021-04-03', 'On Time', '2021-04-03 04:45:44.692287');
 
 -- --------------------------------------------------------
 
@@ -217,8 +217,6 @@ CREATE TABLE `user_table` (
 --
 
 INSERT INTO `user_table` (`id`, `name`, `email`, `password`, `status`, `admin_level`) VALUES
-(1, 'Aries Hachaso', 'lms-aries@gmail.com', '0192023a7bbd73250516f069df18b500', 'Librarian', 1),
-(3, 'Ian Destura', 'idestura35@gmail.com', '0192023a7bbd73250516f069df18b500', 'Librarian Assistant', 0),
 (4, 'admin', 'admin@admin.com', '0192023a7bbd73250516f069df18b500', 'Super Administrator', 0);
 
 --
